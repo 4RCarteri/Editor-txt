@@ -89,12 +89,14 @@
             mFileNew.Name = "mFileNew";
             mFileNew.Size = new Size(180, 26);
             mFileNew.Text = "New";
+            mFileNew.Click += mFileNew_Click;
             // 
             // mFileNewWindow
             // 
             mFileNewWindow.Name = "mFileNewWindow";
             mFileNewWindow.Size = new Size(180, 26);
             mFileNewWindow.Text = "New window";
+            mFileNewWindow.Click += mFileNewWindow_Click;
             // 
             // toolStripSeparator1
             // 
@@ -106,18 +108,21 @@
             mFileOpen.Name = "mFileOpen";
             mFileOpen.Size = new Size(180, 26);
             mFileOpen.Text = "Open";
+            mFileOpen.Click += mFileOpen_Click;
             // 
             // mFileSave
             // 
             mFileSave.Name = "mFileSave";
             mFileSave.Size = new Size(180, 26);
             mFileSave.Text = "Save";
+            mFileSave.Click += mFileSave_Click;
             // 
             // mFileSaveAs
             // 
             mFileSaveAs.Name = "mFileSaveAs";
             mFileSaveAs.Size = new Size(180, 26);
             mFileSaveAs.Text = "Save as";
+            mFileSaveAs.Click += mFileSaveAs_Click;
             // 
             // toolStripSeparator2
             // 
@@ -129,6 +134,7 @@
             mFileExit.Name = "mFileExit";
             mFileExit.Size = new Size(180, 26);
             mFileExit.Text = "Exit";
+            mFileExit.Click += mFileExit_Click;
             // 
             // mEdit
             // 
@@ -140,53 +146,53 @@
             // mEditUndo
             // 
             mEditUndo.Name = "mEditUndo";
-            mEditUndo.Size = new Size(180, 26);
+            mEditUndo.Size = new Size(147, 26);
             mEditUndo.Text = "Undo";
             // 
             // mEditRedo
             // 
             mEditRedo.Name = "mEditRedo";
-            mEditRedo.Size = new Size(180, 26);
+            mEditRedo.Size = new Size(147, 26);
             mEditRedo.Text = "Redo";
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(177, 6);
+            toolStripSeparator3.Size = new Size(144, 6);
             // 
             // mEditCut
             // 
             mEditCut.Name = "mEditCut";
-            mEditCut.Size = new Size(180, 26);
+            mEditCut.Size = new Size(147, 26);
             mEditCut.Text = "Cut";
             // 
             // mEditCopy
             // 
             mEditCopy.Name = "mEditCopy";
-            mEditCopy.Size = new Size(180, 26);
+            mEditCopy.Size = new Size(147, 26);
             mEditCopy.Text = "Copy";
             // 
             // mEditPaste
             // 
             mEditPaste.Name = "mEditPaste";
-            mEditPaste.Size = new Size(180, 26);
+            mEditPaste.Size = new Size(147, 26);
             mEditPaste.Text = "Paste";
             // 
             // mEditDelete
             // 
             mEditDelete.Name = "mEditDelete";
-            mEditDelete.Size = new Size(180, 26);
+            mEditDelete.Size = new Size(147, 26);
             mEditDelete.Text = "Delete";
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(177, 6);
+            toolStripSeparator4.Size = new Size(144, 6);
             // 
             // mEditDatetime
             // 
             mEditDatetime.Name = "mEditDatetime";
-            mEditDatetime.Size = new Size(180, 26);
+            mEditDatetime.Size = new Size(147, 26);
             mEditDatetime.Text = "Datetime";
             // 
             // mFormat
@@ -199,13 +205,13 @@
             // mFormatWordWrap
             // 
             mFormatWordWrap.Name = "mFormatWordWrap";
-            mFormatWordWrap.Size = new Size(180, 26);
+            mFormatWordWrap.Size = new Size(161, 26);
             mFormatWordWrap.Text = "Word wrap";
             // 
             // mFormatFont
             // 
             mFormatFont.Name = "mFormatFont";
-            mFormatFont.Size = new Size(180, 26);
+            mFormatFont.Size = new Size(161, 26);
             mFormatFont.Text = "Font";
             // 
             // mView
@@ -219,25 +225,25 @@
             // 
             mViewZoom.DropDownItems.AddRange(new ToolStripItem[] { mViewZoomZoomIn, mViewZoomZoomOut, mViewZoomRestore });
             mViewZoom.Name = "mViewZoom";
-            mViewZoom.Size = new Size(180, 26);
+            mViewZoom.Size = new Size(153, 26);
             mViewZoom.Text = "Zoom";
             // 
             // mViewZoomZoomIn
             // 
             mViewZoomZoomIn.Name = "mViewZoomZoomIn";
-            mViewZoomZoomIn.Size = new Size(180, 26);
+            mViewZoomZoomIn.Size = new Size(152, 26);
             mViewZoomZoomIn.Text = "Zoom in";
             // 
             // mViewZoomZoomOut
             // 
             mViewZoomZoomOut.Name = "mViewZoomZoomOut";
-            mViewZoomZoomOut.Size = new Size(180, 26);
+            mViewZoomZoomOut.Size = new Size(152, 26);
             mViewZoomZoomOut.Text = "Zoom out";
             // 
             // mViewZoomRestore
             // 
             mViewZoomRestore.Name = "mViewZoomRestore";
-            mViewZoomRestore.Size = new Size(180, 26);
+            mViewZoomRestore.Size = new Size(152, 26);
             mViewZoomRestore.Text = "Restore";
             // 
             // mViewStatusBar
@@ -246,7 +252,7 @@
             mViewStatusBar.CheckOnClick = true;
             mViewStatusBar.CheckState = CheckState.Checked;
             mViewStatusBar.Name = "mViewStatusBar";
-            mViewStatusBar.Size = new Size(180, 26);
+            mViewStatusBar.Size = new Size(153, 26);
             mViewStatusBar.Text = "Status bar";
             // 
             // mHelp
@@ -259,13 +265,13 @@
             // mHelpShowHelp
             // 
             mHelpShowHelp.Name = "mHelpShowHelp";
-            mHelpShowHelp.Size = new Size(180, 26);
+            mHelpShowHelp.Size = new Size(156, 26);
             mHelpShowHelp.Text = "Show help";
             // 
             // mHelpAbout
             // 
             mHelpAbout.Name = "mHelpAbout";
-            mHelpAbout.Size = new Size(180, 26);
+            mHelpAbout.Size = new Size(156, 26);
             mHelpAbout.Text = "About";
             // 
             // statusBar
