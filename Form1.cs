@@ -31,12 +31,50 @@ namespace Editor_txt
 
         private void mFileSave_Click(object sender, EventArgs e)
         {
-
+            if(File.Exists(Manager.FilePath))
+            {
+                SaveFile(Manager.FilePath);
+            }
+            else
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Title = "Save...";
+                saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                saveFileDialog.CheckFileExists = false;
+                saveFileDialog.CheckPathExists = true;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    SaveFile(saveFileDialog.FileName);
+                }
+            }
         }
 
         private void mFileSaveAs_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SaveFile(string path)
+        {
+            StreamWriter writer = null;
+            try
+            {
+                writer = new StreamWriter(path, false);
+                writer.Write(txtContent.Text);
+
+                FileInfo fileInfo = new FileInfo(path);
+                Manager.FolderPath = fileInfo.DirectoryName + "\\";
+                Manager.FileName = fileInfo.Name.Remove(fileInfo.Name.LastIndexOf("."));
+                Manager.FileExtension = fileInfo.Extension;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error saving file: \n" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                writer.Close();
+            }
         }
 
         private void mFileExit_Click(object sender, EventArgs e)
