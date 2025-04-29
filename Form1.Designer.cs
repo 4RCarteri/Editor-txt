@@ -62,6 +62,7 @@
             aboutToolStripMenuItem = new ToolStripMenuItem();
             statusBar = new StatusStrip();
             statusBarLabel = new ToolStripStatusLabel();
+            txtContent = new RichTextBox();
             menuBar.SuspendLayout();
             statusBar.SuspendLayout();
             SuspendLayout();
@@ -279,11 +280,21 @@
             statusBarLabel.Size = new Size(35, 17);
             statusBarLabel.Text = "100%";
             // 
+            // txtContent
+            // 
+            txtContent.Dock = DockStyle.Fill;
+            txtContent.Location = new Point(0, 29);
+            txtContent.Name = "txtContent";
+            txtContent.Size = new Size(784, 510);
+            txtContent.TabIndex = 2;
+            txtContent.Text = "";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 561);
+            Controls.Add(txtContent);
             Controls.Add(statusBar);
             Controls.Add(menuBar);
             MainMenuStrip = menuBar;
@@ -334,5 +345,6 @@
         private ToolStripMenuItem aboutToolStripMenuItem;
         private StatusStrip statusBar;
         private ToolStripStatusLabel statusBarLabel;
+        private RichTextBox txtContent;
     }
 }
