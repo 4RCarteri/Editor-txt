@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace Editor_txt
 {
     public partial class Form1 : Form
@@ -26,7 +28,39 @@ namespace Editor_txt
 
         private void mFileOpen_Click(object sender, EventArgs e)
         {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Open...";
+            ofd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            ofd.CheckFileExists = true;
+            ofd.CheckPathExists = true;
+            ofd.InitialDirectory = Manager.FolderPath;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                if (File.Exists(ofd.FileName))
+                {
+                    FileInfo file = new FileInfo(ofd.FileName);
+                    this.Text = Application.ProductName + " - " + file.Name;
 
+                    Manager.FolderPath = file.DirectoryName + "\\";
+                    Manager.FileName = file.Name.Remove(file.Name.LastIndexOf("."));
+                    Manager.FileExtension = file.Extension;
+
+                    StreamReader stream = null;
+                    try
+                    {
+                        stream = new StreamReader(file.FullName, true);
+                        txtContent.Text = stream.ReadToEnd();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error opening file: \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        stream.Close();
+                    }
+                }
+            }
         }
 
         private void mFileSave_Click(object sender, EventArgs e)
@@ -51,7 +85,15 @@ namespace Editor_txt
 
         private void mFileSaveAs_Click(object sender, EventArgs e)
         {
-
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Save as...";
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog.CheckFileExists = false;
+            saveFileDialog.CheckPathExists = true;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                SaveFile(saveFileDialog.FileName);
+            }
         }
 
         private void SaveFile(string path)
