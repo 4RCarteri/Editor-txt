@@ -13,6 +13,8 @@ namespace Editor_txt
         private void mFileNew_Click(object sender, EventArgs e)
         {
             txtContent.Clear();
+            mFileSave.Enabled = true;
+            this.Text = Application.ProductName;
         }
 
         private void mFileNewWindow_Click(object sender, EventArgs e)
@@ -50,6 +52,7 @@ namespace Editor_txt
                     {
                         stream = new StreamReader(file.FullName, true);
                         txtContent.Text = stream.ReadToEnd();
+                        mFileSave.Enabled = true;
                     }
                     catch (Exception ex)
                     {
@@ -65,7 +68,7 @@ namespace Editor_txt
 
         private void mFileSave_Click(object sender, EventArgs e)
         {
-            if(File.Exists(Manager.FilePath))
+            if (File.Exists(Manager.FilePath))
             {
                 SaveFile(Manager.FilePath);
             }
@@ -108,6 +111,10 @@ namespace Editor_txt
                 Manager.FolderPath = fileInfo.DirectoryName + "\\";
                 Manager.FileName = fileInfo.Name.Remove(fileInfo.Name.LastIndexOf("."));
                 Manager.FileExtension = fileInfo.Extension;
+
+                this.Text = Application.ProductName + " - " + fileInfo.Name;
+
+                mFileSave.Enabled = false;
             }
             catch (Exception e)
             {
@@ -126,6 +133,11 @@ namespace Editor_txt
             {
                 Application.Exit();
             }
+        }
+
+        private void txtContent_TextChanged(object sender, EventArgs e)
+        {
+            mFileSave.Enabled = true;
         }
         #endregion
     }

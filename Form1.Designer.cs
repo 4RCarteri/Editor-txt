@@ -297,6 +297,7 @@
             txtContent.Size = new Size(784, 510);
             txtContent.TabIndex = 2;
             txtContent.Text = "";
+            txtContent.TextChanged += txtContent_TextChanged;
             // 
             // Form1
             // 
