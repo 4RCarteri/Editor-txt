@@ -242,6 +242,9 @@
             // 
             // mViewStatusBar
             // 
+            mViewStatusBar.Checked = true;
+            mViewStatusBar.CheckOnClick = true;
+            mViewStatusBar.CheckState = CheckState.Checked;
             mViewStatusBar.Name = "mViewStatusBar";
             mViewStatusBar.Size = new Size(180, 26);
             mViewStatusBar.Text = "Status bar";
