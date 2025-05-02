@@ -1,5 +1,3 @@
-using System.IO;
-
 namespace Editor_txt
 {
     public partial class Form1 : Form
@@ -138,6 +136,60 @@ namespace Editor_txt
         private void txtContent_TextChanged(object sender, EventArgs e)
         {
             mFileSave.Enabled = true;
+        }
+        #endregion
+
+        #region Menu Edit
+        private void mEditUndo_Click(object sender, EventArgs e)
+        {
+            txtContent.Undo();
+        }
+
+        private void mEditRedo_Click(object sender, EventArgs e)
+        {
+            txtContent.Redo();
+        }
+
+        private void mEditCut_Click(object sender, EventArgs e)
+        {
+            txtContent.Cut();
+        }
+
+        private void mEditCopy_Click(object sender, EventArgs e)
+        {
+            txtContent.Copy();
+        }
+
+        private void mEditPaste_Click(object sender, EventArgs e)
+        {
+            txtContent.Paste();
+        }
+
+        private void mEditDelete_Click(object sender, EventArgs e)
+        {
+            txtContent.Text = txtContent.Text.Remove(txtContent.SelectionStart, txtContent.SelectionLength);
+        }
+
+        private void mEditDatetime_Click(object sender, EventArgs e)
+        {
+            int index = txtContent.SelectionStart;
+            string dateTime = DateTime.Now.ToString();
+
+            if (txtContent.SelectionStart == txtContent.Text.Length)
+            {
+                txtContent.AppendText(dateTime);
+                txtContent.SelectionStart = txtContent.Text.Length + dateTime.Length;
+            }
+            else if (txtContent.SelectionStart == 0)
+            {
+                txtContent.Text = txtContent.Text.Insert(0, dateTime);
+                txtContent.SelectionStart = dateTime.Length;
+            }
+            else
+            {
+                txtContent.Text = txtContent.Text.Insert(txtContent.SelectionStart, dateTime);
+                txtContent.SelectionStart = index + dateTime.Length;
+            }
         }
         #endregion
     }
