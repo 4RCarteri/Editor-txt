@@ -192,5 +192,28 @@ namespace Editor_txt
             }
         }
         #endregion
+
+        #region Menu Format
+        private void mFormatWordWrap_Click(object sender, EventArgs e)
+        {
+            txtContent.WordWrap = mFormatWordWrap.Checked;
+        }
+
+        private void mFormatFont_Click(object sender, EventArgs e)
+        {
+            FontDialog fontDialog = new FontDialog();
+            fontDialog.ShowColor = true;
+            fontDialog.ShowEffects = true;
+
+            fontDialog.Font = txtContent.Font;
+            fontDialog.Color = txtContent.ForeColor;
+
+            if (fontDialog.ShowDialog() == DialogResult.OK)
+            {
+                txtContent.Font = fontDialog.Font;
+                txtContent.ForeColor = fontDialog.Color;
+            }
+        }
+        #endregion
     }
 }
