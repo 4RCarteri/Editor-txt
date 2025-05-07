@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHelp));
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             webBrowser = new WebBrowser();
             SuspendLayout();
@@ -46,6 +47,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(webBrowser);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormHelp";
             Text = "Help Form about editor TXT";
             ResumeLayout(false);
