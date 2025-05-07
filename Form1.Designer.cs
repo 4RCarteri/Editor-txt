@@ -366,6 +366,7 @@
             toolBarNew.Name = "toolBarNew";
             toolBarNew.Size = new Size(23, 25);
             toolBarNew.Text = "New";
+            toolBarNew.Click += mFileNew_Click;
             // 
             // toolBarOpen
             // 
@@ -375,6 +376,7 @@
             toolBarOpen.Name = "toolBarOpen";
             toolBarOpen.Size = new Size(23, 25);
             toolBarOpen.Text = "Open";
+            toolBarOpen.Click += mFileOpen_Click;
             // 
             // toolBarSave
             // 
@@ -384,6 +386,7 @@
             toolBarSave.Name = "toolBarSave";
             toolBarSave.Size = new Size(23, 25);
             toolBarSave.Text = "Save";
+            toolBarSave.Click += mFileSave_Click;
             // 
             // toolStripSeparator5
             // 
@@ -399,6 +402,7 @@
             toolBarFont.Size = new Size(24, 25);
             toolBarFont.Text = "A";
             toolBarFont.ToolTipText = "Font";
+            toolBarFont.Click += mFormatFont_Click;
             // 
             // toolStripSeparator6
             // 
@@ -414,6 +418,7 @@
             toolBarZoom.Size = new Size(23, 25);
             toolBarZoom.Text = "Restore";
             toolBarZoom.ToolTipText = "Zoom 100%";
+            toolBarZoom.Click += mViewZoomRestore_Click;
             // 
             // toolBarZoomOut
             // 
@@ -425,6 +430,7 @@
             toolBarZoomOut.Text = "-";
             toolBarZoomOut.TextImageRelation = TextImageRelation.Overlay;
             toolBarZoomOut.ToolTipText = "Zoom out";
+            toolBarZoomOut.Click += mViewZoomZoomOut_Click;
             // 
             // toolBarZoomIn
             // 
@@ -436,6 +442,7 @@
             toolBarZoomIn.Text = "+";
             toolBarZoomIn.TextImageRelation = TextImageRelation.Overlay;
             toolBarZoomIn.ToolTipText = "Zoom in";
+            toolBarZoomIn.Click += mViewZoomZoomIn_Click;
             // 
             // toolStripSeparator7
             // 
@@ -450,6 +457,7 @@
             toolBarHelp.Name = "toolBarHelp";
             toolBarHelp.Size = new Size(23, 25);
             toolBarHelp.Text = "Help";
+            toolBarHelp.Click += mHelpShowHelp_Click;
             // 
             // toolBarExit
             // 
@@ -460,6 +468,7 @@
             toolBarExit.Size = new Size(23, 25);
             toolBarExit.Text = "Exit";
             toolBarExit.ToolTipText = "Exit";
+            toolBarExit.Click += mFileExit_Click;
             // 
             // txtContent
             // 
