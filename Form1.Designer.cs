@@ -214,14 +214,14 @@
             // 
             mFormatWordWrap.CheckOnClick = true;
             mFormatWordWrap.Name = "mFormatWordWrap";
-            mFormatWordWrap.Size = new Size(180, 26);
+            mFormatWordWrap.Size = new Size(161, 26);
             mFormatWordWrap.Text = "Word wrap";
             mFormatWordWrap.Click += mFormatWordWrap_Click;
             // 
             // mFormatFont
             // 
             mFormatFont.Name = "mFormatFont";
-            mFormatFont.Size = new Size(180, 26);
+            mFormatFont.Size = new Size(161, 26);
             mFormatFont.Text = "Font";
             mFormatFont.Click += mFormatFont_Click;
             // 
@@ -244,18 +244,21 @@
             mViewZoomZoomIn.Name = "mViewZoomZoomIn";
             mViewZoomZoomIn.Size = new Size(152, 26);
             mViewZoomZoomIn.Text = "Zoom in";
+            mViewZoomZoomIn.Click += mViewZoomZoomIn_Click;
             // 
             // mViewZoomZoomOut
             // 
             mViewZoomZoomOut.Name = "mViewZoomZoomOut";
             mViewZoomZoomOut.Size = new Size(152, 26);
             mViewZoomZoomOut.Text = "Zoom out";
+            mViewZoomZoomOut.Click += mViewZoomZoomOut_Click;
             // 
             // mViewZoomRestore
             // 
             mViewZoomRestore.Name = "mViewZoomRestore";
             mViewZoomRestore.Size = new Size(152, 26);
             mViewZoomRestore.Text = "Restore";
+            mViewZoomRestore.Click += mViewZoomRestore_Click;
             // 
             // mViewStatusBar
             // 
@@ -265,6 +268,7 @@
             mViewStatusBar.Name = "mViewStatusBar";
             mViewStatusBar.Size = new Size(153, 26);
             mViewStatusBar.Text = "Status bar";
+            mViewStatusBar.Click += mViewStatusBar_Click;
             // 
             // mHelp
             // 
@@ -276,14 +280,16 @@
             // mHelpShowHelp
             // 
             mHelpShowHelp.Name = "mHelpShowHelp";
-            mHelpShowHelp.Size = new Size(156, 26);
+            mHelpShowHelp.Size = new Size(180, 26);
             mHelpShowHelp.Text = "Show help";
+            mHelpShowHelp.Click += mHelpShowHelp_Click;
             // 
             // mHelpAbout
             // 
             mHelpAbout.Name = "mHelpAbout";
-            mHelpAbout.Size = new Size(156, 26);
+            mHelpAbout.Size = new Size(180, 26);
             mHelpAbout.Text = "About";
+            mHelpAbout.Click += mHelpAbout_Click;
             // 
             // statusBar
             // 

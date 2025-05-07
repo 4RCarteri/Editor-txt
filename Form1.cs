@@ -215,5 +215,51 @@ namespace Editor_txt
             }
         }
         #endregion
+
+        #region Menu View
+
+        private void mViewZoomZoomIn_Click(object sender, EventArgs e)
+        {
+            txtContent.ZoomFactor += 0.2f;
+            setZoomStatusBar();
+        }
+
+        private void mViewZoomZoomOut_Click(object sender, EventArgs e)
+        {
+            txtContent.ZoomFactor -= 0.2f;
+            setZoomStatusBar();
+        }
+
+        private void mViewZoomRestore_Click(object sender, EventArgs e)
+        {
+            txtContent.ZoomFactor = 1.0f;
+            setZoomStatusBar();
+        }
+
+        private void mViewStatusBar_Click(object sender, EventArgs e)
+        {
+            statusBar.Visible = mViewStatusBar.Checked;
+        }
+
+        private void setZoomStatusBar()
+        {
+            statusBarLabel.Text = $"{(txtContent.ZoomFactor * 100).ToString("0")}%";
+        }
+        #endregion
+
+        #region Menu Help
+
+        private void mHelpShowHelp_Click(object sender, EventArgs e)
+        {
+            FormHelp formHelp = new FormHelp();
+            formHelp.Show();
+        }
+
+        private void mHelpAbout_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.Show();
+        }
+        #endregion
     }
 }
