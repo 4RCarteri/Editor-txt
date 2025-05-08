@@ -36,6 +36,9 @@ The text editor provides the following functionalities:
 - **Insert Date and Time**:
   - Insert the current date and time at the cursor position.
 
+
+  ![image2](Resources/editor.png)
+
 ### Additional Features:
 - **File Management**:
   - Automatically manages file paths, default names, and extensions (.txt).
